@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf _site",
     "eleventy:default": "eleventy",
     "eleventy:watch": "eleventy --watch",
-    "styles:prod": "node-sass src/styles/ --output dist/styles/ && postcss ./dist/styles/*.css --replace",
-    "styles:dev": "node-sass src/styles/ --output dist/styles/ --source-map true --source-map-contents true && postcss ./dist/styles/*.css --replace",
+    "styles:prod": "node-sass src/styles/ --output _site/styles/ && postcss ./_site/styles/*.css --replace",
+    "styles:dev": "node-sass src/styles/ --output _site/styles/ --source-map true --source-map-contents true && postcss ./_site/styles/*.css --replace",
     "scripts:prod": "webpack --mode=production",
     "scripts:dev": "webpack --mode=development",
     "serve": "light-server -c .lightserverrc",
     "dev": "cross-env NODE_ENV=development npm-run-all clean styles:dev eleventy:default --parallel eleventy:watch serve --print-label",
     "dev:debug": "DEBUG=* npm run dev",
-    "build-prod": "cross-env NODE_ENV=production run-s clean eleventy:default styles:prod --print-label"
+    "build": "cross-env NODE_ENV=production run-s clean eleventy:default scripts:prod styles:prod --print-label"
   },
   "repository": {
     "type": "git",
