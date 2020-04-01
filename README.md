@@ -27,12 +27,12 @@ Clone this repo and install all dependencies using npm:
 ### How to use in development
 
 ```
-$ npm run dev
+$ yarn run dev
 ```
  And in debug mode:
  
 ```
-$ npm run dev:debug
+$ yarn run dev:debug
 ```
 
 You can view the rendered site at the given access URL served up by light-server:
@@ -45,16 +45,10 @@ The local url is configured in `.lightserverrc`
 ### To build ready for production
 
 ```
-npm run build
+yarn run build
 ```
 
 Tai11s will build and optimise your code ready for deployment
 
 - Pack and optimise javascript
 - Build tailwind CSS from config, compile your Sass and run PurgeCSS to remove unusued classes based on the output `dist` folder
-
-## BONUS: Travis Github Pages deployment script
-
-`.travis.yml` can be modified to suit your own needs. This simple script will build from a named branch and deploy to Github Pages via your [Travis CI](https://travis-ci.org/) account. 
-
-Store your Github Token securely in the Travis control panel
